@@ -1,4 +1,4 @@
-import { Image, Text, StyleSheet, Dimensions, SafeAreaView } from 'react-native';
+import { Image, Text, StyleSheet, Dimensions, SafeAreaView, View } from 'react-native';
 import dragon from "./assets/drag.jpeg";
 import Box from './components/Box';
 import Input from './components/Input';
@@ -12,8 +12,10 @@ export default function App() {
         accessibilityLabel="Dragon"
       />
       <Box style={styles.boxContainer}>
-        <Text style={styles.introText}>Monsters Search</Text>
+        <View style={{borderRadius: 20}}>
+        <Text style={styles.introText}>Monster Search</Text>
           <Input />
+          </View>
       </Box>
       
     </SafeAreaView>
@@ -34,6 +36,7 @@ const styles = StyleSheet.create({
     borderColor: '#D1E1E9',
     borderWidth: 10,
     backgroundColor: '#3E3858',
+    borderRadius: 20
   },
   introText: {
     width: width * 0.94,
@@ -41,10 +44,9 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     fontWeight: 'bold',
     textAlign: 'center',
-    paddingVertical: 4,
-    fontSize: 20,
+    marginTop: 26,
+    fontSize: 24,
     color: 'white'
-    
   },
    
   });

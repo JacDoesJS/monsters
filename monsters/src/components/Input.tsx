@@ -38,19 +38,18 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 20,
-  
   },
   input: {
       width: '80%',
       maxWidth: 400,
     alignSelf: 'center',
       paddingHorizontal: 6,
-    paddingVertical: 4,
+      paddingVertical: 10,
+      marginVertical: 16,
     borderWidth: 1,
     borderRadius: 6,
     backgroundColor: '#fff',
-      fontSize: scale * 16,
+      fontSize: scale * 18,
   
     },
     button: {
@@ -58,13 +57,14 @@ const styles = StyleSheet.create({
         width: '50%',
         alignSelf: 'center',
         borderRadius: 4,
-        marginVertical: 20
+        paddingVertical: 10,
+        marginBottom: 26
     },
   buttonText: {
     fontSize: 20,
     textAlign: 'center',
       fontWeight: 'bold',
-      color: 'white',
+      color: '#3E3858',
       paddingVertical: 4
   }
 });
