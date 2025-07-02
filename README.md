@@ -52,3 +52,5 @@ Given more time, I would love to make the background color fill the screen and t
 It would be nice to make the monster actions text expandable.
 
 It would be better user experience if the input box cleared when a user wanted to search for another monster.
+
+One more fun thought - use the image returned with the monster to update the banner image each time.
