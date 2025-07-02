@@ -41,7 +41,7 @@ The search box is case insensitive.
 
 ## Next steps
 
-This would benefit greatly from a custom Text component to avoid the repetition of <Text style={styles.text}> in MonsterDetails and to allow consistent text styling across the app. It would be easy to add a custom font here too and props for small, medium, and large font sizes, and different font weights.
+This would benefit greatly from a custom Text component to avoid the repetition of `<Text style={styles.text}>` in MonsterDetails and to allow consistent text styling across the app. It would be easy to add a custom font here too and props for small, medium, and large font sizes, and different font weights.
 
 In order to offer a choice of light or dark mode, I could add a theme context.
 
