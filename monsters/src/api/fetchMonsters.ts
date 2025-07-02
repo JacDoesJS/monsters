@@ -1,7 +1,7 @@
 const monstersUrl = "https://www.dnd5eapi.co/api/monsters/";
   
 export const fetchMonster = async (name: string) => {
-    const formattedName = name.toLowerCase().replace(/\s+/g, '-'); // replace spaces with dashes
+    const formattedName = name.toLowerCase().replace(/\s+/g, '-'); 
     const response = await fetch(`${monstersUrl}${formattedName}`);
   
     if (!response.ok) {
