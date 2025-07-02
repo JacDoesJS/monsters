@@ -12,14 +12,19 @@ export default function Box({children, style}: BoxProps) {
 }
 
 const { width } = Dimensions.get('window');
-
+console.log('Screen width:', width);
 const styles = StyleSheet.create({
     container: {
-        width: width * 0.94,
+        width: width * 0.9,
         alignSelf: 'center',
+        alignItems: 'center',
         maxWidth: 400,
-        borderRadius: 6,
+        borderRadius: 20,
         overflow: 'hidden',
+        borderColor: '#D1E1E9',
+        borderWidth: 1,
+        backgroundColor: '#3E3858',
+        padding: 10
     },
   });
   
