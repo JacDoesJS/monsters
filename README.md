@@ -29,13 +29,14 @@ Yarn package manager - install globally: `npm install -g yarn`
 ### Set up instructions
 1. clone the repo, see https://github.com/JacDoesJS/monsters
 2. inside the project folder, run `yarn install` (or just `yarn` which does the same thing and saves typing an extra word)
-3. `yarn web` to run the app and view it in the browser
+3. `yarn dev` to run the app and view it in the browser
 
 ### Monster Names
-Here are a few names to try in the Search box. If you want the full list, go to `https://www.dnd5eapi.co/api/2014/monsters/`
-The search box is case insensitive.
+Here are a few names to try in the Search box. If you want the full list, go to `https://www.dnd5eapi.co/api/2014/monsters/`  
 
 Aboleth, Awakened Tree, Balor, Crocodile, Giant Fire Beetle, Pegasus, Roper, Scout, Shadow, Vrock, Warhorse, Zombie
+
+The search box is case insensitive.
 
 
 ## Next steps
@@ -47,5 +48,7 @@ In order to offer a choice of light or dark mode, I could add a theme context.
 If I fetched the whole of the monster json response for all monsters when the app loaded and stored it in context and wrapped the app in a context provider, I could explore fuzzy matching possibilities and or for example returning every monster with the word dragon in its name.
 
 Given more time, I would love to make the background color fill the screen and test this with a screen reader, and configure Jest for testing.
+
+It would be nice to make the monster actions text expandable.
 
 It would be better user experience if the input box cleared when a user wanted to search for another monster.
