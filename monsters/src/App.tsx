@@ -2,8 +2,29 @@ import { Image, Text, StyleSheet, Dimensions, SafeAreaView, View } from 'react-n
 import dragon from "./assets/drag.jpeg";
 import Box from './components/Box';
 import Input from './components/Input';
+import { useState } from 'react';
+import { fetchMonster } from './api/fetchMonster';
+import MonsterDetails from './components/MonsterDetails';
+
 
 export default function App() {
+  const [monsterName, setMonsterName] = useState('');
+  const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [monsterData, setMonsterData] = useState(null);
+  const [error, setError] = useState('');
+
+
+  const handleSearch = async () => {
+    try {
+      const result = await fetchMonster(monsterName);
+      setMonsterData(result);
+      setError('');
+    } catch (err: any) {
+      setError(err.message);
+      setMonsterData(null);
+    }
+  };
+
   return (
     <SafeAreaView>
       <Image
@@ -14,10 +35,20 @@ export default function App() {
       <Box style={styles.boxContainer}>
         <View style={{borderRadius: 20}}>
         <Text style={styles.introText}>Monster Search</Text>
-          <Input />
+          <Input
+            monsterName={monsterName}
+            setMonsterName={setMonsterName}
+            onSubmit={() => {
+              setHasSubmitted(true)
+              handleSearch()
+            }
+            }
+          />
           </View>
       </Box>
-      
+
+      {/* {hasSubmitted && <Text>You entered: {monsterName}</Text>} */}
+      {monsterData && <MonsterDetails monster={monsterData}></MonsterDetails>}
     </SafeAreaView>
   );
 }

@@ -1,14 +1,18 @@
-// import { useName } from '@/app/contexts/name-context';
-import { useState } from 'react';
 import { TextInput, StyleSheet, Dimensions, Text, TouchableOpacity } from 'react-native';
 import Box from './Box';
 
-export default function Input() {
 
-  const  [userName, setUserName] = useState('');
+interface InputProps {
+    monsterName: string;
+    setMonsterName: (name: string) => void;
+    onSubmit: () => void; 
+}
+  
+export default function Input({ monsterName, setMonsterName, onSubmit }: InputProps) {
 
-  const onSubmit = () => {
-    console.log("Monster name is " + userName)
+  const handlePress = () => {
+      console.log("Monster name is " + monsterName);
+      onSubmit()
   }
   
   return (
@@ -17,11 +21,11 @@ export default function Input() {
       <TextInput
         style={styles.input}
         placeholder="Name..."
-        value={userName}
-        onChangeText={setUserName}
+        value={monsterName}
+        onChangeText={setMonsterName}
       />
     
-    <TouchableOpacity style={styles.button} onPress={onSubmit} activeOpacity={0.7}>
+    <TouchableOpacity style={styles.button} onPress={handlePress} activeOpacity={0.7}>
       <Text style={styles.buttonText}>Submit</Text>
         </TouchableOpacity>
     </Box>
@@ -49,7 +53,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 6,
     backgroundColor: '#fff',
-      fontSize: scale * 18,
+      fontSize: scale * 14,
   
     },
     button: {
